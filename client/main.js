@@ -78,13 +78,23 @@ Template.domain.events({
 Template.searchForm.events({
   'submit .search-form': function(){
     event.preventDefault();
-    Meteor.call('domains.search', event.target.text.value);
-    return Domains.find({});
+    // Meteor.call('domains.search', event.target.text.value ,(err, result) =>{
+    //   if (err) throw new Meteor.Error('No Search Results');
+    //   console.log(result);
+    //   return result;
+    //   // return Domains.find({});
+    // });
   }
 });
 
 Template.searchForm.helpers({
-  domains(){
-    return Domains.find({});
-  },
+  domains(searchTerm){
+    // Meteor.call('domains.search',(err, result) =>{
+    //   if (err) throw new Meteor.Error('No Search Results');
+    //   console.log(result);
+    //   return result;
+    if (typeof (searchTerm) === "undefined") return Domains.find({});
+    else return Domains.find("domain.keywords": searchTerm);
+    // });
+  }
 });
