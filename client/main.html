@@ -36,13 +36,6 @@
 <template name="searchForm">
   <form class="search-form">
       <input type="text" name="text" placeholder="Search by Keyword">
-      <!-- <select name="TLDs">
-        <option value="com">.com</option>
-        <option value="ca">.ca</option>
-        <option value="net">.net</option>
-        <option value="org">.org</option>
-        <option value="other">OTHER</option>
-      </select> -->
       <button class="btn">Search</button>
   </form>
   <ul class="collection">
@@ -54,7 +47,14 @@
 
 <template name="domain">
     <li class="collection-item">
-      <a href="#" class="delete-note secondary-content"><i class="material-icons">close</i></a>
+      {{#if currentUser}}
+        <div>
+          <a href="#" class="delete-note secondary-content"><i class="material-icons">close</i></a>
+        </div>
+        <div class="secondary-content">
+          <a class="waves-effect waves-light btn modal-trigger" href="#editModal">Edit</a>
+        </div>
+      {{/if}}
       {{domain.domain}}
       <br/>
       <strong>Creation date: </strong>{{domain.dateCreated}}
@@ -66,6 +66,27 @@
     <div class="modal-content">
       <h3>Add Domain</h3>
       <form class="add-form">
+        <input type="text" name="text" placeholder="Add Domain" >
+        <input type="text" name="text" placeholder="Year Domain Was Created" >
+        <input type="text" name="text" placeholder="Keyword">
+        <input type="text" name="text" placeholder="Keyword">
+        <input type="text" name="text" placeholder="Keyword">
+        <input type="text" name="text" placeholder="Keyword">
+        <input type="text" name="text" placeholder="Keyword">
+        <input type="text" name="text" placeholder="Keyword">
+        <input type="text" name="text" placeholder="Keyword">
+        <input type="text" name="text" placeholder="Keyword">
+        <button class="btn" type="submit" >Submit</button>
+      </form>
+    </div>
+  </div>
+</template>
+
+<template name="edit">
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <h3>Edit Domain</h3>
+      <form class="edit-form">
         <input type="text" name="text" placeholder="Add Domain" >
         <input type="text" name="text" placeholder="Year Domain Was Created" >
         <input type="text" name="text" placeholder="Keyword">

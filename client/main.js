@@ -10,14 +10,16 @@ Accounts.ui.config({
 });
 
 Template.body.helpers({
-  // domains:[
-  //   {domain: 'CalgarySignalHill.com'},
-  //   {domain: 'Beef.com'},
-  //   {domain: 'DomainBrains.com'},
-  // ]
-  // domains(){
-  //   return Domains.find({});
-  // }
+});
+
+Template.edit.events({
+  'submit .edit-form': function(){
+    // Meteor.call('domains.update', domain);
+    // Close modal
+    console.log('Event', event);
+    $('#addModal').modal('close');
+    return false;
+  },
 });
 
 Template.add.events({
