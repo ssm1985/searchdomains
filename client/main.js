@@ -96,11 +96,4 @@ Template.searchForm.helpers({
       return Domains.find({});
     }
   },
-  // domainSearch(searchTerm){
-  //   Meteor.call('domains.search', searchTerm ,(err, result) =>{
-  //     if (err) throw new Meteor.Error('No Search Results');
-  //     console.log("Spencer", result);
-  //     return result;
-  //   });
-  // }
 });
