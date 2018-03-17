@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Domains } from '../lib/collections.js';
 import { Accounts } from 'meteor/accounts-base';
+import { Session } from 'meteor/session';
 
 import './main.html';
 
@@ -78,23 +79,28 @@ Template.domain.events({
 Template.searchForm.events({
   'submit .search-form': function(){
     event.preventDefault();
-    // Meteor.call('domains.search', event.target.text.value ,(err, result) =>{
-    //   if (err) throw new Meteor.Error('No Search Results');
-    //   console.log(result);
-    //   return result;
-    //   // return Domains.find({});
-    // });
+    const searchTerm = event.target.text.value;
+    Session.set('query', searchTerm);
   }
 });
 
 Template.searchForm.helpers({
-  domains(searchTerm){
-    // Meteor.call('domains.search',(err, result) =>{
-    //   if (err) throw new Meteor.Error('No Search Results');
-    //   console.log(result);
-    //   return result;
-    if (typeof (searchTerm) === "undefined") return Domains.find({});
-    else return Domains.find("domain.keywords": searchTerm);
-    // });
-  }
+  domains(){
+    const searchTerm = Session.get('query');
+    if (searchTerm) {
+      console.log('inside IF');
+      return Domains.find({"domain.keywords": searchTerm});
+    }
+    else {
+      console.log('ELSE');
+      return Domains.find({});
+    }
+  },
+  // domainSearch(searchTerm){
+  //   Meteor.call('domains.search', searchTerm ,(err, result) =>{
+  //     if (err) throw new Meteor.Error('No Search Results');
+  //     console.log("Spencer", result);
+  //     return result;
+  //   });
+  // }
 });
