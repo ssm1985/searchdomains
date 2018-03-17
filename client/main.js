@@ -88,11 +88,9 @@ Template.searchForm.helpers({
   domains(){
     const searchTerm = Session.get('query');
     if (searchTerm) {
-      console.log('inside IF');
       return Domains.find({"domain.keywords": searchTerm});
     }
     else {
-      console.log('ELSE');
       return Domains.find({});
     }
   },
