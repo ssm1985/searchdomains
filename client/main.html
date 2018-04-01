@@ -26,6 +26,7 @@
     {{> searchForm}}
   </div>
   {{> add}}
+  {{> edit}}
   <script>
     $(document).ready(function(){
       $('.modal').modal();
@@ -52,7 +53,7 @@
           <a href="#" class="delete-note secondary-content"><i class="material-icons">close</i></a>
         </div>
         <div class="secondary-content">
-          <a class="waves-effect waves-light btn modal-trigger" href="#editModal">Edit</a>
+          <a class="waves-effect waves-light btn modal-trigger edit-note" href="#editModal">Edit</a>
         </div>
       {{/if}}
       {{domain.domain}}

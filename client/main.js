@@ -75,6 +75,10 @@ Template.domain.events({
   'click .delete-note': function(){
     Meteor.call('domains.remove', this);
     return false;
+  },
+  'click .edit-note': function(){
+    const domain = Meteor.call('domains.edit', this);
+    console.log('domain ---->', domain);
   }
 });
 
