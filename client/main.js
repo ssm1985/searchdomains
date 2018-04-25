@@ -12,17 +12,17 @@ Accounts.ui.config({
 Template.body.helpers({
 });
 
-Template.edit.helpers({
-  edit(){
-
-  }
-});
+// Template.edit.helpers({
+//   edit(){
+//
+//   }
+// });
 Template.edit.events({
   'submit .edit-form': function(){
     // Meteor.call('domains.update', domain);
     // Close modal
     console.log('Event', event);
-    $('#addModal').modal('close');
+    $('#editModal').modal('close');
     return false;
   },
 });
