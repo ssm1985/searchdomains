@@ -12,6 +12,11 @@ Accounts.ui.config({
 Template.body.helpers({
 });
 
+Template.edit.helpers({
+  edit(){
+
+  }
+});
 Template.edit.events({
   'submit .edit-form': function(){
     // Meteor.call('domains.update', domain);
@@ -76,10 +81,9 @@ Template.domain.events({
     Meteor.call('domains.remove', this);
     return false;
   },
-  'click .edit-note': function(){
-    const domain = Meteor.call('domains.edit', this);
-    console.log('domain ---->', domain);
-  }
+  // 'click .edit-note': function(){
+  //   Meteor.call('domains.edit', this);
+  // }
 });
 
 Template.searchForm.events({
