@@ -88,17 +88,25 @@
     <div class="modal-content">
       <h3>Edit Domain</h3>
       <form class="edit-form">
-        <input type="text" name="text" placeholder="Edit Domain" >
-        <input type="text" name="text" placeholder="Year Domain Was Created" >
-        <input type="text" name="text" placeholder="Keyword">
-        <input type="text" name="text" placeholder="Keyword">
-        <input type="text" name="text" placeholder="Keyword">
-        <input type="text" name="text" placeholder="Keyword">
-        <input type="text" name="text" placeholder="Keyword">
-        <input type="text" name="text" placeholder="Keyword">
-        <input type="text" name="text" placeholder="Keyword">
-        <input type="text" name="text" placeholder="Keyword">
-        <button class="btn" type="submit" >Submit</button>
+        <input type="text" name="text" value={{updateDomain.domain.domain}} >
+        <strong>Created At: </strong>{{updateDomain.createdAt}}
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[0]}}
+          placeholder="Keyword">
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[1]}}
+          placeholder="Keyword">
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[2]}}
+          placeholder="Keyword">
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[3]}}
+          placeholder="Keyword">
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[4]}}
+          placeholder="Keyword">
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[5]}}
+          placeholder="Keyword">
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[6]}}
+          placeholder="Keyword">
+        <input type="text" name="text" value={{updateDomain.domain.keywords.[7]}}
+          placeholder="Keyword">
+        <button class="btn" type="submit">Submit</button>
       </form>
     </div>
   </div>

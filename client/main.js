@@ -12,11 +12,12 @@ Accounts.ui.config({
 Template.body.helpers({
 });
 
-// Template.edit.helpers({
-//   edit(){
-//
-//   }
-// });
+Template.edit.helpers({
+  updateDomain(){
+    console.log(Domains.findOne({_id:'xxpfWzb3M8mbJQKXG'}));
+    return Domains.findOne({_id:'xxpfWzb3M8mbJQKXG'});
+  }
+});
 Template.edit.events({
   'submit .edit-form': function(){
     // Meteor.call('domains.update', domain);
@@ -78,12 +79,17 @@ Template.add.events({
 
 Template.domain.events({
   'click .delete-note': function(){
+    event.preventDefault();
     Meteor.call('domains.remove', this);
     return false;
   },
-  // 'click .edit-note': function(){
-  //   Meteor.call('domains.edit', this);
-  // }
+  'click .edit-note': function(){
+    event.preventDefault();
+    // Meteor.call('domains.edit', this);
+    // console.log('THIS========', Domains.findOne({_id: this._id}));
+    // return false;
+    return Domains.findOne({_id: this._id});
+  }
 });
 
 Template.searchForm.events({
