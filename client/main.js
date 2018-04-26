@@ -13,9 +13,11 @@ Template.body.helpers({
 });
 
 Template.edit.helpers({
-  updateDomain(){
-    console.log(Domains.findOne({_id:'xxpfWzb3M8mbJQKXG'}));
-    return Domains.findOne({_id:'xxpfWzb3M8mbJQKXG'});
+  updateDomain(domainId){
+    // console.log(Domains.findOne({_id: domainId}));
+    console.log('Session.get---- ', Session.get('domainId'));
+    const domain = Session.get('domainId');
+    return Domains.findOne({_id: domain});
   }
 });
 Template.edit.events({
@@ -85,10 +87,9 @@ Template.domain.events({
   },
   'click .edit-note': function(){
     event.preventDefault();
-    // Meteor.call('domains.edit', this);
-    // console.log('THIS========', Domains.findOne({_id: this._id}));
-    // return false;
-    return Domains.findOne({_id: this._id});
+    // return Domains.findOne({_id: this._id});
+    Session.set('domainId', this._id);
+    console.log(Session.get('domainId'));
   }
 });
 
