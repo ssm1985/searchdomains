@@ -1,1 +1,4 @@
 /* CSS declarations go here */
+#signup-link {
+  display: none !important;
+}
