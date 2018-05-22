@@ -2,3 +2,22 @@
 #signup-link {
   display: none !important;
 }
+
+nav {
+  background-color: white;
+}
+
+.nav-center ul {
+  text-align: center;
+}
+
+.nav-center ul li {
+  display: inline;
+  float: none;
+  background-color: white;
+}
+
+.nav-center ul li a {
+  display: inline-block;
+  color: black;
+}
