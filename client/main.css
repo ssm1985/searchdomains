@@ -7,6 +7,10 @@ nav {
   background-color: white;
 }
 
+nav ul a:hover {
+  background-color: #00A7A6;
+}
+
 .nav-center ul {
   text-align: center;
 }
