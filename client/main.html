@@ -1,6 +1,7 @@
 <head>
-  <title>DomainBrains.com Search</title>
+  <title>DomainBrains.com | Search</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
@@ -20,28 +21,28 @@
         </ul>
       </div>
       <div class="nav-wrapper">
-        <ul id="dropdown1" class="dropdown-content">
-          <li><a href="https://www.domainbrains.comempower-your-business">
-            EMPOWER YOUR BUSINESS!
-          </a></li>
-          <li><a href="https://www.domainbrains.com/services">
-            Services
-          </a></li>
-          <li><a href="https://www.domainbrains.com/about">
-            About
-          </a></li>
-          <li><a href="https://www.domainbrains.com">
-            Blog
-          </a></li>
-          <li><a href="https://www.domainbrains.com/contact">
-            Contact
-          </a></li>
-        </ul>
         <div class="row">
           <div class="col l1">
           </div>
-          <nav class="col l10 nav-center hide-on-small-only">
-            <ul>
+          <ul id="dropdown" class="dropdown-content">
+            <li><a href="https://www.domainbrains.comempower-your-business">
+              EMPOWER YOUR BUSINESS!
+            </a></li>
+            <li><a href="https://www.domainbrains.com/services">
+              Services
+            </a></li>
+            <li><a href="https://www.domainbrains.com/about">
+              About
+            </a></li>
+            <li><a href="https://www.domainbrains.com">
+              Blog
+            </a></li>
+            <li><a href="https://www.domainbrains.com/contact">
+              Contact
+            </a></li>
+          </ul>
+          <nav class="col l10 nav-center">
+            <ul class="hide-on-small-only">
               <li><a href="https://www.domainbrains.comempower-your-business">
                 EMPOWER YOUR BUSINESS!
               </a></li>
@@ -58,12 +59,14 @@
                 Contact
               </a></li>
             </ul>
+            <ul class="hide-on-med-and-up">
+              <li>
+                <a class="dropdown-trigger" data-target="dropdown">
+                  <i class="material-icons">menu</i>
+                </a>
+              </li>
+            </ul>
           </nav>
-          <div class="s12 hide-on-med-and-up mobile-menu">
-            <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-              <i class="small material-icons">menu</i>
-            </a>
-          </div>
           <div class="col l1">
           </div>
         </div>
@@ -76,6 +79,7 @@
   </div>
   {{> add}}
   {{> edit}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script>
     $(document).ready(function(){
       $('.modal').modal();
