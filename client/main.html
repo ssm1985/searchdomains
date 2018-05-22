@@ -1,7 +1,6 @@
 <head>
   <title>DomainBrains.com Search</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -21,11 +20,28 @@
         </ul>
       </div>
       <div class="nav-wrapper">
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="https://www.domainbrains.comempower-your-business">
+            EMPOWER YOUR BUSINESS!
+          </a></li>
+          <li><a href="https://www.domainbrains.com/services">
+            Services
+          </a></li>
+          <li><a href="https://www.domainbrains.com/about">
+            About
+          </a></li>
+          <li><a href="https://www.domainbrains.com">
+            Blog
+          </a></li>
+          <li><a href="https://www.domainbrains.com/contact">
+            Contact
+          </a></li>
+        </ul>
         <div class="row">
           <div class="col l1">
           </div>
-          <nav class="col l10 s12 nav-center">
-            <ul class="hide-on-small-only">
+          <nav class="col l10 nav-center hide-on-small-only">
+            <ul>
               <li><a href="https://www.domainbrains.comempower-your-business">
                 EMPOWER YOUR BUSINESS!
               </a></li>
@@ -42,27 +58,12 @@
                 Contact
               </a></li>
             </ul>
-            <!-- <div class="hide-on-med-and-up"> -->
-              <i class="fa fa-bars"></i>
-            <!-- </div> -->
-            <!-- <ul class="hide-on-med-and-up">
-              <li><a href="https://www.domainbrains.comempower-your-business">
-                EMPOWER YOUR BUSINESS!
-              </a></li>
-              <li><a href="https://www.domainbrains.com/services">
-                Services
-              </a></li>
-              <li><a href="https://www.domainbrains.com/about">
-                About
-              </a></li>
-              <li><a href="https://www.domainbrains.com">
-                Blog
-              </a></li>
-              <li><a href="https://www.domainbrains.com/contact">
-                Contact
-              </a></li>
-            </ul> -->
           </nav>
+          <div class="s12 hide-on-med-and-up mobile-menu">
+            <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+              <i class="small material-icons">menu</i>
+            </a>
+          </div>
           <div class="col l1">
           </div>
         </div>
@@ -78,6 +79,7 @@
   <script>
     $(document).ready(function(){
       $('.modal').modal();
+      $('.dropdown-trigger').dropdown();
     });
   </script>
 </body>

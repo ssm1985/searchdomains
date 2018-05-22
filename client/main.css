@@ -25,3 +25,12 @@ nav ul a:hover {
   display: inline-block;
   color: black;
 }
+
+.mobile-menu {
+  background-color: white;
+  text-align: center;
+}
+
+i {
+  padding: 15px;
+}
