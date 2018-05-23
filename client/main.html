@@ -1,7 +1,6 @@
 <head>
   <title>DomainBrains.com | Search</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
@@ -24,8 +23,8 @@
         <div class="row">
           <div class="col l1">
           </div>
-          <ul id="dropdown" class="dropdown-content">
-            <li><a href="https://www.domainbrains.comempower-your-business">
+          <ul id="slide-out" class="sidenav hide-on-med-and-up">
+            <li><a href="https://www.domainbrains.com/empower-your-business">
               EMPOWER YOUR BUSINESS!
             </a></li>
             <li><a href="https://www.domainbrains.com/services">
@@ -41,9 +40,14 @@
               Contact
             </a></li>
           </ul>
-          <nav class="col l10 nav-center">
-            <ul class="hide-on-small-only">
-              <li><a href="https://www.domainbrains.comempower-your-business">
+          <div class="s12 hide-on-med-and-up mobile-menu">
+              <a class="sidenav-trigger" href="#!" data-target="slide-out">
+                <i class="small material-icons">menu</i>
+              </a>
+          </div>
+          <nav class="col l10 nav-center hide-on-small-only">
+            <ul>
+              <li><a href="https://www.domainbrains.com/empower-your-business">
                 EMPOWER YOUR BUSINESS!
               </a></li>
               <li><a href="https://www.domainbrains.com/services">
@@ -59,13 +63,6 @@
                 Contact
               </a></li>
             </ul>
-            <ul class="hide-on-med-and-up">
-              <li>
-                <a class="dropdown-trigger" data-target="dropdown">
-                  <i class="material-icons">menu</i>
-                </a>
-              </li>
-            </ul>
           </nav>
           <div class="col l1">
           </div>
@@ -79,11 +76,15 @@
   </div>
   {{> add}}
   {{> edit}}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, options);
+    });
+  </script>
   <script>
     $(document).ready(function(){
       $('.modal').modal();
-      $('.dropdown-trigger').dropdown();
     });
   </script>
 </body>
