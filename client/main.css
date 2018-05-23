@@ -21,16 +21,36 @@ nav ul a:hover {
   background-color: white;
 }
 
-.nav-center ul li a {
+.menu li a {
   display: inline-block;
   color: black;
 }
 
-.mobile-menu {
-  background-color: white;
+i {
+  /* padding: 15px; */
+  color: black;
+}
+
+.menu-icon {
   text-align: center;
 }
 
-i {
-  padding: 15px;
+.dropdown-content {
+  background-color: white;
+  margin: 0;
+  display: block;
+  min-width: 300px;
+  max-height: auto;
+  margin-left: -1px;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+  will-change: width, height;
+}
+
+.dropdown-content li a {
+  display: block;
+  color: black;
 }

@@ -23,7 +23,35 @@
         <div class="row">
           <div class="col l1">
           </div>
-          <ul id="slide-out" class="sidenav hide-on-med-and-up">
+          <nav class="col l10 nav-center">
+            <div class="hide-on-small-only">
+              <ul class="menu">
+                <li><a href="https://www.domainbrains.com/empower-your-business">
+                  EMPOWER YOUR BUSINESS!
+                </a></li>
+                <li><a href="https://www.domainbrains.com/services">
+                  Services
+                </a></li>
+                <li><a href="https://www.domainbrains.com/about">
+                  About
+                </a></li>
+                <li><a href="https://www.domainbrains.com">
+                  Blog
+                </a></li>
+                <li><a href="https://www.domainbrains.com/contact">
+                  Contact
+                </a></li>
+              </ul>
+            </div>
+            <div class="hide-on-med-and-up menu-icon">
+              <!-- Dropdown trigger -->
+              <a href="#" class="dropdown-button" data-activates="dropdown" data-beloworigin="true">
+                <i class="medium material-icons">menu</i>
+              </a>
+            </div>
+          </nav>
+          <!-- Dropdown structure -->
+          <ul id="dropdown" class="dropdown-content collection">
             <li><a href="https://www.domainbrains.com/empower-your-business">
               EMPOWER YOUR BUSINESS!
             </a></li>
@@ -40,30 +68,6 @@
               Contact
             </a></li>
           </ul>
-          <div class="s12 hide-on-med-and-up mobile-menu">
-              <a class="sidenav-trigger" href="#!" data-target="slide-out">
-                <i class="small material-icons">menu</i>
-              </a>
-          </div>
-          <nav class="col l10 nav-center hide-on-small-only">
-            <ul>
-              <li><a href="https://www.domainbrains.com/empower-your-business">
-                EMPOWER YOUR BUSINESS!
-              </a></li>
-              <li><a href="https://www.domainbrains.com/services">
-                Services
-              </a></li>
-              <li><a href="https://www.domainbrains.com/about">
-                About
-              </a></li>
-              <li><a href="https://www.domainbrains.com">
-                Blog
-              </a></li>
-              <li><a href="https://www.domainbrains.com/contact">
-                Contact
-              </a></li>
-            </ul>
-          </nav>
           <div class="col l1">
           </div>
         </div>
@@ -77,15 +81,16 @@
   {{> add}}
   {{> edit}}
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems, options);
-    });
-  </script>
-  <script>
     $(document).ready(function(){
       $('.modal').modal();
-    });
+      $('.dropdown-button').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        hover: false, // Activate on hover
+        belowOrigin: true, // Displays dropdown below the button
+        alignment: 'right' // Displays dropdown with edge aligned to the left of button
+      });
+    })(jQuery); // End of jQuery name space
   </script>
 </body>
 
