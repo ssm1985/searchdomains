@@ -2,7 +2,11 @@
   "name": "searchtable",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "cleanup": "rm -rf ../bundle/",
+    "dist": "npm run cleanup && meteor build ../ --directory --architecture os.linux.x86_64 --server-only",
+    "predeploy": "npm run dist && cp app.yaml ../bundle/ && cp Dockerfile ../bundle/",
+    "deploy": "npm run predeploy && (cd ../bundle && gcloud app deploy -q)"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.36",
