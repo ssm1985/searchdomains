@@ -4,5 +4,5 @@ import { Mongo } from 'meteor/mongo';
 
 Meteor.startup(() => {
   // code to run on server at startup
-  // Accounts.config({forbidClientAccountCreation: true});
+  Accounts.config({forbidClientAccountCreation: true});
 });
