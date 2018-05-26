@@ -19,7 +19,7 @@ Template.edit.helpers({
   }
 });
 Template.edit.events({
-  'submit .edit-form': function(){
+  'submit .edit-form': function(event){
     event.preventDefault();
     const target = event.target;
     const domain = target.text;
@@ -63,7 +63,7 @@ Template.edit.events({
 });
 
 Template.add.events({
-  'submit .add-form': function(){
+  'submit .add-form': function(event){
     event.preventDefault();
     const target = event.target;
     const domain = target.text;
@@ -112,12 +112,12 @@ Template.add.events({
 });
 
 Template.domain.events({
-  'click .delete-note': function(){
+  'click .delete-note': function(event){
     event.preventDefault();
     Meteor.call('domains.remove', this);
     return false;
   },
-  'click .edit-note': function(){
+  'click .edit-note': function(event){
     event.preventDefault();
     // return Domains.findOne({_id: this._id});
     Session.set('domainId', this._id);
@@ -125,7 +125,7 @@ Template.domain.events({
 });
 
 Template.searchForm.events({
-  'submit .search-form': function(){
+  'submit .search-form': function(event){
     event.preventDefault();
     const searchTerm = event.target.text.value;
     Session.set('query', searchTerm);
