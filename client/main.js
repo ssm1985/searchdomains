@@ -127,7 +127,7 @@ Template.domain.events({
 Template.searchForm.events({
   'submit .search-form': function(event){
     event.preventDefault();
-    const searchTerm = event.target.text.value;
+    const searchTerm = event.target.text.value.toLowerCase();
     Session.set('query', searchTerm);
   }
 });
