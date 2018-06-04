@@ -135,8 +135,22 @@ Template.searchForm.events({
 Template.searchForm.helpers({
   domains(){
     const searchTerm = Session.get('query');
-    if (searchTerm) {
-      return Domains.find({"domain.keywords": searchTerm});
+    var searchTermPlural;
+    var searchTermNotPlural;
+    if (searchTerm && searchTerm.length > 0 && searchTerm[searchTerm.length - 1] != 's') {
+      searchTermPlural = searchTerm.concat('s');
+    }
+    if (searchTerm && searchTerm.length > 0 && searchTerm[searchTerm.length - 1] === 's') {
+      searchTermNotPlural = searchTerm.slice(0, -1);
+    }
+    console.log('searchTerm ------> ', searchTerm);
+    console.log('searchTermPlural ------> ', searchTermPlural);
+    console.log('searchTermNotPlural ------> ', searchTermNotPlural);
+    if (searchTerm && searchTermPlural) {
+      return Domains.find({ $or: [{"domain.keywords": searchTerm}, {"domain.keywords": searchTermPlural}]});
+    }
+    else if (searchTerm && searchTermNotPlural) {
+      return Domains.find({ $or: [{"domain.keywords": searchTerm}, {"domain.keywords": searchTermNotPlural}]});
     }
     else {
       return Domains.find({});
