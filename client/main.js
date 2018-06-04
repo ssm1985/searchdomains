@@ -143,9 +143,6 @@ Template.searchForm.helpers({
     if (searchTerm && searchTerm.length > 0 && searchTerm[searchTerm.length - 1] === 's') {
       searchTermNotPlural = searchTerm.slice(0, -1);
     }
-    console.log('searchTerm ------> ', searchTerm);
-    console.log('searchTermPlural ------> ', searchTermPlural);
-    console.log('searchTermNotPlural ------> ', searchTermNotPlural);
     if (searchTerm && searchTermPlural) {
       return Domains.find({ $or: [{"domain.keywords": searchTerm}, {"domain.keywords": searchTermPlural}]});
     }
